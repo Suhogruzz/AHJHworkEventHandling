@@ -6,7 +6,7 @@ export default class Randomizer {
         while ([...this.randomList].length < 16)
         this.randomList.add(Math.floor(Math.random() * 16));
         let n = 0;
-        setInterval(() => {
+        let i = setInterval(() => {
             const goblins = [...document.querySelectorAll(".goblin")];
             const activPosition = goblins.find(
             (el) => !el.classList.contains("hidden")

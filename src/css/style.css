@@ -26,6 +26,10 @@
   }
 }
 
+body {
+  cursor: url(../img/hammer.png), auto;
+}
+
 .hidden {
   display: none;
 }

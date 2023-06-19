@@ -4,11 +4,12 @@ export default class Gameplay {
         this.playingFieldScore = document.querySelector('.playing-field-score');
         this.newMenu = document.querySelector('.new-menu-container');
         this.newMenuScore = document.querySelector('.new-menu-score');
+        this.buttons = document.querySelectorAll('.start');
     }
 
     game() {
-        let score = 0;
         let hiddenMiss = 0;
+        let score = 0;
         this.playingField.onclick = (el) => {
             let target = el.target;
             if(target.classList.contains('goblin')) {
@@ -21,6 +22,10 @@ export default class Gameplay {
                 this.newMenu.classList.remove('hidden');
                 score = 0;
                 hiddenMiss = 0;
+                [...this.buttons].forEach((el) => {
+                    el.onclick = () => {
+                        window.location.reload()
+                  }})
             }
         }
     }

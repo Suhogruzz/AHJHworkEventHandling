@@ -8,10 +8,11 @@ const mainMenu = document.querySelector(".start-menu-container");
 const newGame = document.querySelector(".new-menu-container")
 
 export function mainGameLogic() {
+  let randomPosition = null;
   [...document.querySelectorAll(".field")].forEach((el) => {
     new Goblin(el);
   });
-  let randomPosition = new Randomizer();
+  randomPosition = new Randomizer();
   randomPosition.randomize();
   let gameplay = new Gameplay();
   gameplay.game();
