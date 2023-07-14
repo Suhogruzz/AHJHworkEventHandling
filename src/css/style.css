@@ -5,7 +5,7 @@
   overflow: hidden;
 }
 
-.goblin, .playing-field .field {
+.bonked, .goblin, .playing-field .field {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -24,6 +24,18 @@
   .start-menu-logo, .new-menu-score, .new-menu-score-logo, .start-menu button, .new-menu button, .playing-field-score {
     font-size: 52px;
   }
+}
+
+.start-menu, .new-menu {
+  padding: 5% 5%;
+  margin: 0 auto;
+  width: 95%;
+  height: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.667);
 }
 
 body {
@@ -55,7 +67,6 @@ main, .start-menu-container {
   height: 90%;
   width: 90%;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.39);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -67,16 +78,22 @@ main, .start-menu-container {
   height: 24%;
   width: 24%;
   background-image: url(/src/img/pngegg.png);
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 10px;
 }
 .playing-field .field div {
-  margin: 0 auto;
-  width: 95%;
+  margin: auto auto;
+  width: 65%;
   height: 95%;
 }
 
 .goblin {
   background-image: url(/src/img/goblin.png);
   animation: vibrate-3 0.5s linear infinite both;
+}
+
+.bonked {
+  background-image: url(/src/img/goblin-bonked.png);
 }
 
 .start-menu-container, .new-menu-container {
@@ -88,17 +105,6 @@ main, .start-menu-container {
   background-color: rgba(0, 0, 0, 0.867);
 }
 
-.start-menu, .new-menu {
-  padding: 5% 5%;
-  margin: 0 auto;
-  width: 95%;
-  height: 95%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.184);
-}
 .start-menu button, .new-menu button {
   border: 4px solid rgba(255, 255, 255, 0.7019607843);
   border-radius: 25px;
@@ -106,6 +112,10 @@ main, .start-menu-container {
   box-sizing: content-box;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.7019607843);
+}
+
+.new-menu {
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .start-menu-logo, .new-menu-score, .new-menu-score-logo {
@@ -145,5 +155,15 @@ main, .start-menu-container {
   }
   100% {
     transform: translate(0);
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0%;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
   }
 }/*# sourceMappingURL=style.css.map */

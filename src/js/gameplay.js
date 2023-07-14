@@ -12,9 +12,14 @@ export default class Gameplay {
         let score = 0;
         this.playingField.onclick = (el) => {
             let target = el.target;
-            if(target.classList.contains('goblin')) {
+            if(target.classList.contains('unbonked')) {
                 this.playingFieldScore.textContent = score+=1;
-                target.classList.toggle('hidden');
+                setTimeout(() => {
+                    target.classList.remove('bonked');
+                    target.classList.add('unbonked');
+                }, 1000)
+                target.classList.remove('unbonked');
+                target.classList.add('bonked');
             } else {
                 hiddenMiss+=1;
             }
