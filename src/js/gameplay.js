@@ -14,6 +14,7 @@ export default class Gameplay {
             let target = el.target;
             if(target.classList.contains('goblin')) {
                 this.playingFieldScore.textContent = score+=1;
+                target.classList.toggle('hidden');
             } else {
                 hiddenMiss+=1;
             }
